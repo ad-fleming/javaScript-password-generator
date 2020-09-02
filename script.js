@@ -15,13 +15,18 @@ generateBtn.addEventListener("click", writePassword);
 
 // Set password criteria variable like switches
 
+generatePassword(){
+  // TODO: GENERATE A REAL PASSWORD AND REPLACE THE RETURN STRING WITH A REAL PASSWORD STRING
+  return ("This is a placeholder password");
+}
+
 var passwordLength = 0;
 var includeLowerCase = false;
 var includeUpperCase = false;
 var includeNumeric = false;
 var includeSpecial = false;
 
-// Ask the user if they would like to create password- if not, end. If so, begin prompts.
+// When user clicks the generate password button-->ask, if they would like to create password- if not, end. If so, begin prompts.
 var initPassword = confirm("Would you like to generate a new, secure password?");
 if(initPassword === false){
   alert("Okay...maybe later then.");
