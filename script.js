@@ -63,13 +63,52 @@ var userLowerCase = confirm("Would you like to include lowercase characters in y
             passwordDetails.includeLowerCase = true;
             console.log(passwordDetails.includeLowerCase) 
             // Working
-          }else{
-            // if no, update includeLowerCase in passwordDetails object to be false;
-            if(userLowerCase === false){
+            // if no, update passwordDetails.includeLowerCase = false.
+          }else{ if(userLowerCase === false){
               passwordDetails.includeLowerCase = false;
               console.log(passwordDetails.includeLowerCase)
             }
           }
+// Confirm if user would like to use uppercase characters
+  var userUpperCase = confirm("Would you like to include uppercase characters in your password?")
+  console.log(userUpperCase);
+  // if yes, update includeUpperCase in passwordDetails object to be true;
+  if(userUpperCase === true){
+    passwordDetails.includeUpperCase = true;
+    console.log(passwordDetails.includeUpperCase) 
+    // working
+    // if no, update passwordDetails.includeUpperCase = false.
+  }else if(userUpperCase === false){
+      passwordDetails.includeUpperCase = false;
+      console.log(passwordDetails.includeUpperCase)
+    }
 
+// Confirm if user would like to use numeric characters
+var userNumeric = confirm("Would you like to include numeric characters in your password?")
+console.log(userNumeric);
+// if yes, update includeUpperCase in passwordDetails object to be true;
+if(userNumeric === true){
+  passwordDetails.includeNumeric = true;
+  console.log(passwordDetails.includeNumeric) 
+  // working
+  // if no, update passwordDetails.includeNumeric = false.
+}else if(userNumeric === false){
+    passwordDetails.includeNumeric = false;
+    console.log(passwordDetails.includeNumeric)
+  }
 
+// Confirm if user would like to use special characters
+var userSpecialCharacter = confirm("Would you like to include special characters in your password?")
+console.log(userSpecialCharacter);
+// if yes, update includeUpperCase in passwordDetails object to be true;
+if(userSpecialCharacter === true){
+  passwordDetails.includeSpecial = true;
+  console.log(passwordDetails.includeSpecial) 
+  // working
+  // if no, update passwordDetails.includeSpecial = false.
+}else if(userSpecialCharacter === false){
+    passwordDetails.includeSpecial = false;
+    console.log(passwordDetails.includeSpecial)
+  }
+  console.log(passwordDetails)
 
