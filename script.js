@@ -57,9 +57,12 @@ function confirmationSync () {
       }else if(userChoice && userConfirmations.confirmationQuestions[i] === "Include symbols?"){
         userConfirmations.userChoices.push(symbolCharCodes)
         console.log(userConfirmations.userChoices);
+      }else{if(userChoice[0] === false && userChoice[1] === false && userChoice[2] === false && userChoice[3]){
+        return alert("You must make at least one selection to generate password.")
       }
   }
     console.log(userConfirmations.userChoices)
+      
 }
   
 
@@ -71,7 +74,7 @@ function confirmationSync () {
     // create a return to stop function if user chooses wrong parameters
     if(characterAmount < 8 || characterAmount > 128){return alert("Password outside of required parameters.")
   }
-    confirmationSync();
+    confirmationSync()
     // Create an empty array where the randomized character codes will be stored
     var generatedPassword = [];
     // loop an amount of times equal to the specified password character amount
