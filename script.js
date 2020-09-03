@@ -9,40 +9,101 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 let characterAmount = 0;
-
+// define 
 let userConfirmations = {
-            confirmationQuestions: ["Include lowercase?", "Include uppercase?", "Include numbers?", "Include Symbols?"],
-            confirmationStates : [false, false, false, false]
-          
+            confirmationQuestions: ["Include lowercase?", "Include uppercase?", "Include numbers?", "Include symbols?"],
+            userChoices: []
 }
-
+// Set variables equal to arrays and using our arrayFromLowToHigh() to populate them with character code values
+const lowercaseCharCodes = arrayFromLowToHigh(97,122)
+const uppercaseCharCodes = arrayFromLowToHigh(65, 90)
+const numberCharCodes = arrayFromLowToHigh(48,57)
+const symbolCharCodes = arrayFromLowToHigh(33, 47).concat(
+  arrayFromLowToHigh(58,64)
+).concat(
+  arrayFromLowToHigh(91,96)
+).concat(
+  arrayFromLowToHigh(123,126)
+)
 
  
-
-syncCharacterAmount()
-
 function syncCharacterAmount() {
   const userAmount = prompt("Please enter a password length between 8 - 128.")
   if(userAmount >= 8 && userAmount <= 128){
     characterAmount = parseInt(userAmount);
     console.log(characterAmount);
-  }else{
-    alert("You entered a value outside of the parameters.");
   }
 }
-confirmationSync()
 
+
+// Write a function that prompts user to confirm types of characters
 function confirmationSync () {
   for(var i = 0; i <userConfirmations.confirmationQuestions.length; i++){
-     userConfirmations.confirmationStates[i] = confirm(userConfirmations.confirmationQuestions[i])
-    console.log(userConfirmations.confirmationStates)
-    }
+      var userChoice = confirm(userConfirmations.confirmationQuestions[i]);
+      // For each, if user clicks yes and the first question was the correct question(had to do this because of the object), push the lower character codes into the empty userChoices array
+      if(userChoice && userConfirmations.confirmationQuestions[i] === "Include lowercase?"){
+        userConfirmations.userChoices.push(lowercaseCharCodes)
+        console.log(userConfirmations.userChoices);
+      } else if(userChoice && userConfirmations.confirmationQuestions[i] === "Include uppercase?"){
+        userConfirmations.userChoices.push(uppercaseCharCodes)
+        console.log(userConfirmations.userChoices);
+      }else if(userChoice && userConfirmations.confirmationQuestions[i] === "Include numbers?"){
+        userConfirmations.userChoices.push(numberCharCodes)
+        console.log(userConfirmations.userChoices);
+      }else if(userChoice && userConfirmations.confirmationQuestions[i] === "Include symbols?"){
+        userConfirmations.userChoices.push(symbolCharCodes)
+        console.log(userConfirmations.userChoices);
+      }
   }
+    console.log(userConfirmations.userChoices)
+}
+  
+
+
+  // define the function listed below
+  function generatePassword(){
+  // call the SyncCharacterAmount() and the confirmationSync()
+    syncCharacterAmount();
+    // create a return to stop function if user chooses wrong parameters
+    if(characterAmount < 8 || characterAmount > 128){return alert("Password outside of required parameters.")
+  }
+    confirmationSync();
+    // Create an empty array where the randomized character codes will be stored
+    var generatedPassword = [];
+    // loop an amount of times equal to the specified password character amount
+    for(var i = 0; i < characterAmount; i++){
+    // choose a random index from inside the array
+    var randomIndex = Math.floor(Math.random() * userConfirmations.userChoices.length)
+    // return it's value (which is an array)
+    var randomIndexValue = userConfirmations.userChoices[randomIndex]
+    console.log(randomIndexValue);
+    // repeat the process in the next level down
+    var randomCharacterIndex = Math.floor(Math.random() * randomIndexValue.length)
+    var randomCharacter = randomIndexValue[randomCharacterIndex];
+    //  push a string into the generatedPassword array, converting the character codes into their characters
+    generatedPassword.push(String.fromCharCode(randomCharacter));
+
+    }
+    console.log(generatedPassword)
+    console.log(generatedPassword.join(''))
+    // return that string without ,s and set it to be the password
+    return generatedPassword.join('')
+  }
+
+// Write a function to create an array starting at a low number and ending with the highest. So that we can create variables with the character codes.
+function arrayFromLowToHigh(low, high){
+  const array = []
+  for (var i =low; i <=high; i++){
+    array.push(i)
+  }
+  return array
+}
+
+
 
 
 
