@@ -39,4 +39,6 @@ THEN the password is either displayed in an alert or written to the page
 
 
 
-##
+## Credit
+
+I completed this project in collaboration with my fellow students.
