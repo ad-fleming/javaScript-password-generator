@@ -14,7 +14,9 @@ Take a look below to see our guidelines!
 
 ``
 1.AS AN employee with access to sensitive data
+
 1.I WANT to randomly generate a password that meets certain criteria
+
 1.SO THAT I can create a strong password that provides greater security
 ``
 
