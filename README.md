@@ -44,4 +44,5 @@ I completed this project in collaboration with my fellow students.
 ## Links
 
 [Webpage](https://ad-fleming.github.io/javaScript-password-generator/.)
+
 [Repo](https://github.com/ad-fleming/javaScript-password-generator)
