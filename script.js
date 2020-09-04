@@ -6,7 +6,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   userConfirmations.userChoices = []
-  
+  if(characterAmount < 8 || characterAmount > 128){return 
+    }
+
   passwordText.value = password;
   
 
