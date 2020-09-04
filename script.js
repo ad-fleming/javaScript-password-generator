@@ -62,7 +62,7 @@ function confirmationSync () {
       }
   }
     console.log(userConfirmations.userChoices)
-      
+}
 }
   
 
@@ -70,10 +70,10 @@ function confirmationSync () {
   // define the function listed below
   function generatePassword(){
   // call the SyncCharacterAmount() and the confirmationSync()
-    syncCharacterAmount();
+    syncCharacterAmount()
     // create a return to stop function if user chooses wrong parameters
     if(characterAmount < 8 || characterAmount > 128){return alert("Password outside of required parameters.")
-  }
+    }
     confirmationSync()
     // Create an empty array where the randomized character codes will be stored
     var generatedPassword = [];
