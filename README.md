@@ -6,7 +6,7 @@ This project was designed to challenge us to add logic to a website so that rand
 
 In my case, I wanted to learn to incorporate arrays and objects, which brought some additional challenges. In addition to writing functions to incorporate the prompt and confirm data, I created an object where character code arrays were stored in a separate array. This resulted in a two-dimensional array which required a unique solution to creating the generated password.
 
-You will see that altogether, this particular solution is probably over-complex, but focuses on exploring how to use some of the tools and methods that will become essential as we tackle more difficult problems.
+You will see that altogether, this particular solution is probably not the most efficient or direct, but focuses on exploring how to use some of the tools and methods that will become essential as we tackle more difficult problems.
 
 Take a look below to see our guidelines!
 
@@ -42,3 +42,8 @@ THEN the password is either displayed in an alert or written to the page
 ## Credit
 
 I completed this project in collaboration with my fellow students.
+
+## Links
+
+[Webpage](https://ad-fleming.github.io/javaScript-password-generator/.)
+[Repo](https://github.com/ad-fleming/javaScript-password-generator)
