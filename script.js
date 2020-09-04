@@ -39,7 +39,6 @@ function syncCharacterAmount() {
   const userAmount = prompt("Please enter a password length between 8 - 128.")
   if(userAmount >= 8 && userAmount <= 128){
     characterAmount = parseInt(userAmount);
-    console.log(characterAmount);
   }
 }
 
@@ -51,21 +50,16 @@ function confirmationSync () {
       // For each, if user clicks yes and the first question was the correct question(had to do this because of the object), push the lower character codes into the empty userChoices array
       if(userChoice && userConfirmations.confirmationQuestions[i] === "Include lowercase?"){
         userConfirmations.userChoices.push(lowercaseCharCodes)
-        console.log(userConfirmations.userChoices);
       } else if(userChoice && userConfirmations.confirmationQuestions[i] === "Include uppercase?"){
         userConfirmations.userChoices.push(uppercaseCharCodes)
-        console.log(userConfirmations.userChoices);
       }else if(userChoice && userConfirmations.confirmationQuestions[i] === "Include numbers?"){
         userConfirmations.userChoices.push(numberCharCodes)
-        console.log(userConfirmations.userChoices);
       }else if(userChoice && userConfirmations.confirmationQuestions[i] === "Include symbols?"){
         userConfirmations.userChoices.push(symbolCharCodes)
-        console.log(userConfirmations.userChoices);
       }else{if(userChoice[0] === false && userChoice[1] === false && userChoice[2] === false && userChoice[3]){
         return alert("You must make at least one selection to generate password.")
       }
   }
-    console.log(userConfirmations.userChoices)
 }
 }
   
@@ -85,7 +79,6 @@ function confirmationSync () {
     var randomIndex = Math.floor(Math.random() * userConfirmations.userChoices.length)
     // return it's value (which is an array)
     var randomIndexValue = userConfirmations.userChoices[randomIndex]
-    console.log(randomIndexValue);
     // repeat the process in the next level down
     var randomCharacterIndex = Math.floor(Math.random() * randomIndexValue.length)
     var randomCharacter = randomIndexValue[randomCharacterIndex];
@@ -93,8 +86,6 @@ function confirmationSync () {
     generatedPassword.push(String.fromCharCode(randomCharacter));
 
     }
-    console.log(generatedPassword)
-    console.log(generatedPassword.join(''))
     // return that string without ,s and set it to be the password
     return generatedPassword.join('') 
     
