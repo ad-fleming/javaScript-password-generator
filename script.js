@@ -5,8 +5,10 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  userConfirmations.userChoices = []
+  
   passwordText.value = password;
+  
 
 }
 // Add event listener to generate button
@@ -65,8 +67,6 @@ function confirmationSync () {
 }
 }
   
-
-
   // define the function listed below
   function generatePassword(){
   // call the SyncCharacterAmount() and the confirmationSync()
@@ -94,8 +94,11 @@ function confirmationSync () {
     console.log(generatedPassword)
     console.log(generatedPassword.join(''))
     // return that string without ,s and set it to be the password
-    return generatedPassword.join('')
+    return generatedPassword.join('') 
+    
   }
+
+  
 
 // Write a function to create an array starting at a low number and ending with the highest. So that we can create variables with the character codes.
 function arrayFromLowToHigh(low, high){
