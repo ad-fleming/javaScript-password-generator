@@ -12,16 +12,13 @@ Take a look below to see our guidelines!
 
 ## User Story
 
-``
 1.AS AN employee with access to sensitive data
-
 1.I WANT to randomly generate a password that meets certain criteria
-
 1.SO THAT I can create a strong password that provides greater security
-``
+
 
 ## Acceptance Criteria
-```
+
 1.GIVEN I need a new, secure password
 1.WHEN I click the button to generate a password
 1.THEN I am presented with a series of prompts for password criteria
@@ -38,7 +35,7 @@ characters
 1.THEN a password is generated that matches the selected criteria
 1.WHEN the password is generated
 1.THEN the password is either displayed in an alert or written to the page
-```
+
 
 
 ## Credit
