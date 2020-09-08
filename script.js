@@ -23,7 +23,7 @@ let userConfirmations = {
             userChoices: []
 }
 // Set variables equal to arrays and using our arrayFromLowToHigh() to populate them with character code values
-const lowercaseCharCodes = arrayFromLowToHigh(97,122)
+const lowercaseCharCodes = arrayFromLowToHigh(97,122) 
 const uppercaseCharCodes = arrayFromLowToHigh(65, 90)
 const numberCharCodes = arrayFromLowToHigh(48,57)
 const symbolCharCodes = arrayFromLowToHigh(33, 47).concat(
@@ -56,11 +56,8 @@ function confirmationSync () {
         userConfirmations.userChoices.push(numberCharCodes)
       }else if(userChoice && userConfirmations.confirmationQuestions[i] === "Include symbols?"){
         userConfirmations.userChoices.push(symbolCharCodes)
-      }else{if(userChoice[0] === false && userChoice[1] === false && userChoice[2] === false && userChoice[3]){
-        return alert("You must make at least one selection to generate password.")
       }
   }
-}
 }
   
   // define the function listed below
@@ -86,6 +83,9 @@ function confirmationSync () {
     generatedPassword.push(String.fromCharCode(randomCharacter));
 
     }
+
+    }
+
     // return that string without ,s and set it to be the password
     return generatedPassword.join('') 
     
