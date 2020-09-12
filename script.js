@@ -83,13 +83,13 @@ function confirmationSync () {
     generatedPassword.push(String.fromCharCode(randomCharacter));
 
     }
+    return generatedPassword.join('') 
 
-    }
+  }
 
     // return that string without ,s and set it to be the password
-    return generatedPassword.join('') 
-    
-  }
+   
+
 
   
 
